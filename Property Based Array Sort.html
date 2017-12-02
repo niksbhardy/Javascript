@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Webville Cola</title>
+<meta charset="utf-8">
+<script>
+
+//OPEN CONSOLE TO SEE RESULTS
+
+var fruits = [
+		{ name: "Mango", calories: 60, color: "green" },
+		{ name: "Grapes", calories: 67, color: "red" },
+		{ name: "Orange", calories: 47, color: "orange" },
+		{ name: "Banana", calories: 90, color: "yellow" },
+];
+console.log("\n------- sorting by name -------");
+fruits.sort(comapreName);
+printFruits(fruits);
+
+console.log("\n------- sorting by calories -------");
+fruits.sort(comapreCalories);
+printFruits(fruits);
+
+console.log("\n------- sorting by color -------");
+fruits.sort(comapreColor);
+printFruits(fruits);
+
+
+
+
+function comapreName(fruitA, fruitB) {
+	if(fruitA.name > fruitB.name) {
+		return 1;
+	}
+	else if(fruitA.name === fruitB.name) {
+		return 0;
+	} else {
+		return -1;
+	}
+}
+
+function comapreCalories(fruitA, fruitB) {
+	if(fruitA.calories > fruitB.calories) {
+		return 1;
+	}
+	else if(fruitA.calories === fruitB.calories) {
+		return 0;
+	} else {
+		return -1;
+	}
+}
+
+function comapreColor(fruitA, fruitB) {
+	if(fruitA.color > fruitB.color) {
+		return 1;
+	}
+	else if(fruitA.color === fruitB.color) {
+		return 0;
+	} else {
+		return -1;
+	}
+}
+
+function printFruits(fruits) {
+	for (var i = 0; i < fruits.length; i++) {
+		console.log("Name: " + fruits[i].name +
+		            ", Calories: " + fruits[i].calories +
+		            ", Color: " + fruits[i].color);
+	}
+}
+
+</script>
+</head>
+<body> </body>
+</html>
+
