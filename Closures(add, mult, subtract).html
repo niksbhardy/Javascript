@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Webville Cola</title>
+<meta charset="utf-8">
+<script>
+
+//OPEN CONSOLE TO SEE RESULTS
+
+function makeAddition(n) {
+	return function(x) {
+		return x+n;
+	}
+}
+//supply 4 as argument for the value of 'n'
+var add = makeAddition(4);
+//supply 2 as argument for the value of 'x' 
+console.log("result after addition: " +  add(2));
+console.log("--------------");
+
+
+function makeMultiplication(n) {
+	return function(x) {
+		return x*n;
+	}
+}
+//supply 4 as argument for the value of 'n'
+var multiply = makeMultiplication(4);
+//supply 2 as argument for the value of 'x' 
+console.log("result after multiplication: " +  multiply(2));
+console.log("--------------");
+
+
+function makeSubtraction(n) {
+	return function(x) {
+		return x-n;
+	}
+}
+//supply 4 as argument for the value of 'n'
+var subtract = makeSubtraction(4);
+//supply 2 as argument for the value of 'x' 
+console.log("result after subtraction: " +  subtract(2));
+
+</script>
+</head>
+<body> </body>
+</html>
+
