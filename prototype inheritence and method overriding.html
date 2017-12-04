@@ -1,0 +1,58 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>Webville Cola</title>
+<meta charset="utf-8">
+<script>
+
+//OPEN CONSOLE TO SEE RESULTS
+
+//Constructor function to create all type of dogs
+function Dog(name, breed, weight) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+}
+
+//Dog prototype properties. Constructor function inherits these properties. These properties are shared by all dogs.
+Dog.prototype.bark = function() {
+	console.log(this.name +" says WOOF!");
+}
+Dog.prototype.run = function() {
+console.log(this.name + " runs");
+}
+
+//a new Dog instance tommy has properties of Dog and Dog.prototype
+var tommy = new Dog("Tommy", "Pug", 10);
+console.log(tommy.name + " is a "+ tommy.breed +" with weight "+ tommy.weight);
+tommy.bark();
+tommy.run();
+console.log("-------------");
+
+//new Dog instance jacky
+var jacky = new Dog("Jacky", "Labrador", 20);
+console.log(jacky.name + " is a "+ jacky.breed +" with weight "+ jacky.weight);
+jacky.bark();
+jacky.run();
+console.log("-------------");
+
+/*
+But now Tommy wants to change its 'bark' property.
+Let change by overriding the prototype method.
+*/
+
+tommy.bark = function() {
+	console.log(this.name+ " says BOWW BOWW!");
+}
+
+console.log(tommy.name + " is a "+ tommy.breed +" with weight "+ tommy.weight);
+tommy.bark();
+tommy.run();
+
+</script>
+</head>
+<body> </body>
+</html>
+
