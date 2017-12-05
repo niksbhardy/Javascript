@@ -51,6 +51,23 @@ console.log(tommy.name + " is a "+ tommy.breed +" with weight "+ tommy.weight);
 tommy.bark();
 tommy.run();
 
+console.log("-------------");
+//checking properties owned by tommy.
+//this statement will return true as tommy has been constructed from Dog constructor object which has a property 'name'.  
+console.log("name is tommy's own property - "+ tommy.hasOwnProperty("name"));
+//bark was not tommy's own property. It was inherited from Dog prototype. 
+//But since tommy's bark property has been overrided he now has 'bark' as his own property.
+console.log("bark is tommy's own property - "+ tommy.hasOwnProperty("bark"));
+
+console.log("-------------");
+//checking properties owned by jacky.
+//this statement will return true as jacky has been constructed from Dog constructor object which has a property 'name'.  
+console.log("name is jacky's own property - "+ jacky.hasOwnProperty("name"));
+//bark was not jacky's own property. It was inherited from Dog prototype. 
+//This will return 'false'
+console.log("bark is jacky's own property - "+ jacky.hasOwnProperty("bark"));
+
+
 </script>
 </head>
 <body> </body>
