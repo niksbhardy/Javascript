@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Closures</title>
+<meta charset="utf-8">
+<script>
+
+//OPEN CONSOLE TO SEE RESULTS
+
+var arr = [];
+
+arr.push(function() {
+	console.log('Hello world 1');
+});
+arr.push(function() {
+	console.log('Hellol world 2');
+});
+arr.push(function() {
+	console.log('Hello world 3');
+});
+
+arr.forEach(function(item) {
+	item();
+});
+
+</script>
+</head>
+<body> </body>
+</html>
+
