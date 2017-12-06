@@ -48,8 +48,16 @@ console.log('--------------');
 //same as call. But for apply we pass arguments in an array.
 logHello.apply(person);
 logHello2.apply(person, ['Hello', 'Hola']);
+console.log('--------------');
 
-
+//another apply example
+var person2 = {
+  firstname: "Jane",
+  lastname: "Doe"
+}
+//suppose person2 wants to borrow getFullName function from person.
+//Therefore using apply method to set this to point to person2 and the required property to person2.
+console.log(person.getFullName.apply(person2));
 
 </script>
 </head>
