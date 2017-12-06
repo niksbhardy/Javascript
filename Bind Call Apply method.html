@@ -1,39 +1,55 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Bind method</title>
+<title>Bind Call Apply method</title>
 <meta charset="utf-8">
 <script>
 
 //OPEN CONSOLE TO SEE RESULTS
 
 var person = {
+
   firstname : "John",
   lastname : "Doe",
   getFullName: function() {
-  	var fullName = this.firstname +" "+this.lastname;
-  	return fullName;
+    var fullName = this.firstname +" "+this.lastname;
+    return fullName;
   }
 }
 
 var logHello = function() {
-	//here this.getFullName function will not be available as it is a property of variable 'person'. Also 'this' doesn't refer to the 'person'.
-  	console.log("Hello " + this.getFullName());
+  //here this.getFullName function will not be available as it is a property of variable 'person'. Also 'this' doesn't refer to the 'person'.
+    console.log("Hello " + this.getFullName());
 }
 //Therefore to refer 'this' to 'person' we will bind logHello expression to 'person' to use 'person' property getFullName.
 //Bind creates a copy of logHello and set 'this' to the person object.
+//But it doesn't make the function call.
 var logHelloPerson = logHello.bind(person);
 logHelloPerson();
 
 console.log('--------------')
 //here we are using parametrised function in logHello2 expression with two parameters. 
 var logHello2 = function(english, spanish) {
-  	console.log(english+"... " + this.getFullName());
+    console.log(english+"... " + this.getFullName());
     console.log(spanish+"... " + this.getFullName());
 }
 var logHelloPerson2 = logHello2.bind(person);
 //passing arguments.
 logHelloPerson2('Hello', 'Hola');
+
+
+console.log('--------------');
+//call method enables us to set 'this' and call the logHello or logHello2 function as well. We can also pass arguments if required.
+logHello.call(person);
+logHello2.call(person, 'Hello', 'Hola');
+
+
+console.log('--------------');
+//same as call. But for apply we pass arguments in an array.
+logHello.apply(person);
+logHello2.apply(person, ['Hello', 'Hola']);
+
+
 
 </script>
 </head>
