@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Array forEach</title>
+<meta charset="utf-8">
+<script>
+
+//EVENT QUEUE EXAMPLE
+
+//Javascript engine executes the code synchronously line by line. 
+//However, it adds the asynchronous events like button click event or http event in an EVENT QUEUE.
+//These events are executed only after synchronous execution of the documemt.
+//Then the engine checks the event queue and executes the events waiting in the queue.
+
+function waitThreeSeconds() {
+    var ms = 3000 + new Date().getTime();
+    while (new Date() < ms) {}
+    console.log('finished function');
+    
+}
+
+//In this case click function will be added to Event queue and executes 
+//only after execution of rest of the code.
+function clickHandler() {
+    console.log('click event ocurred');
+}
+//listen for the click event on DOM
+document.addEventListener('click', clickHandler);
+
+waitThreeSeconds();
+console.log("finished execution");
+
+</script>
+</head>
+<body> </body>
+</html>
