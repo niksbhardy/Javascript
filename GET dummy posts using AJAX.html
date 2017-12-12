@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>GET posts using AJAX</title>
+<meta charset="utf-8">
+<script>
+
+//OPEN CONSOLE TO SEE RESULTS
+
+//make an XMLHttpRequest object
+var http = new XMLHttpRequest();
+//specify the URL to fetch data.
+var url = 'https://jsonplaceholder.typicode.com/posts';
+//specify the request method
+var method = 'GET';
+//open the http connection
+http.open(method, url);
+
+http.onreadystatechange = function() {
+  if(http.readyState === XMLHttpRequest.DONE && http.status === 200 ) {
+  	//JSON.parse converts received data into JSON format
+	console.log(JSON.parse(http.responseText));
+  } else if (http.readyState === XMLHttpRequest.DONE && http.status !== 200) {
+    console.log('Error!')
+  }
+};
+//send the request
+http.send();
+
+
+</script>
+</head>
+<body> </body>
+</html>
+
