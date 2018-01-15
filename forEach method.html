@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>forEach method</title>
+<meta charset="utf-8">
+<script>
+
+//OPEN CONSOLE TO SEE RESULTS
+
+var colors = ['red', 'blue', 'green'];
+
+console.log("------Using for loop-------");
+for(var i=0; i < colors.length; i++) {
+	console.log(colors[i]);
+}
+
+//For iterating an array avoid for-loop. 
+//forEach method suits for this purpose with less code.
+console.log("------Using forEach method-------");
+colors.forEach(function(color) {
+	console.log(color);
+});
+
+/*
+There is no way to stop or break a forEach() loop other than by throwing an exception. If you need such behavior, the forEach() method is the wrong tool. Use a plain loop or for...of instead. --source MDN
+*/
+
+</script>
+</head>
+<body> </body>
+</html>
